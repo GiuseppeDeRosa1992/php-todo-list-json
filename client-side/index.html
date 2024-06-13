@@ -21,6 +21,10 @@
 <body>
     <div id="app">
         <h1 class="m-0 text-center"> {{ welcomeMessage }} </h1>
+
+        <ul>
+            <li v-for="element in print"> {{element.fare}} </li>
+        </ul>
     </div>
 
     <script src="./main.js"></script>
