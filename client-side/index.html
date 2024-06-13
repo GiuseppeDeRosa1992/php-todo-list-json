@@ -20,11 +20,15 @@
 
 <body>
     <div id="app">
-        <h1 class="m-0 text-center"> {{ welcomeMessage }} </h1>
+        <h1 class="m-0 text-center"> {{ listMessage }} </h1>
 
-        <ul>
-            <li v-for="element in print"> {{element.fare}} </li>
-        </ul>
+        <ol class="m-0">
+            <li v-for="element, i in print" @click="elementDone(i)" :class="lineTrough(i)"> {{element.fare}}
+                <ul>
+                    <li> {{element.cosa}} </li>
+                </ul>
+            </li>
+        </ol>
     </div>
 
     <script src="./main.js"></script>
