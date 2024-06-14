@@ -4,7 +4,9 @@ createApp({
     data() {
         return {
             listMessage: "La lista di cose da fare",
-            print: []
+            print: [],
+            addCosa: "",
+            addFare: "",
         }
     },
     methods: {
@@ -16,6 +18,15 @@ createApp({
         //FUNZIONE CHE QUANDO CLICCO SU LI IN INDEX MI PASSA IL BOOLEAN A FALSO E MI AGGIUNGE UNA RIGA SOPRA LA COSA CLICCATA
         lineTrough(index) {
             return (this.print[index].booleano == false) ? "text-decoration-line-through" : ""
+        },
+
+        addElement() {
+            if (this.addCosa != "" && this.addFare != "") {
+                this.print.push({ cosa: this.addCosa, fare: this.addFare, booleano: true })
+                console.log("Elemento da aggiungere alla lista dato da valore di input", this.addCosa, this.Fare)
+                this.addCosa = ""
+                this.addFare = ""
+            }
         }
     },
     mounted() {

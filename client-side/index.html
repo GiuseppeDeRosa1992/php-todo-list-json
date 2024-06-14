@@ -23,12 +23,16 @@
         <h1 class="m-0 text-center"> {{ listMessage }} </h1>
 
         <ol class="m-0">
-            <li v-for="element, i in print" @click="elementDone(i)" :class="lineTrough(i)"> {{element.fare}}
-                <ul>
-                    <li> {{element.cosa}} </li>
-                </ul>
+            <li v-for="element, i in print" @click="elementDone(i)">
+                <!-- <ul>
+                    <li :class="lineTrough(i)"> {{element.cosa}} </li>
+                </ul> -->
+                <span>{{element.fare}}: {{element.cosa}}</span>
             </li>
         </ol>
+        <input type="text" name="aggiungicosa" id="" placeholder="Aggiungi cosa fare" v-model="addCosa">
+        <input type="text" name="aggiungifare" id="" placeholder="Aggiungi cose da fare" v-model="addFare">
+        <button type="submit" @click="addElement()">Aggiungi</button>
     </div>
 
     <script src="./main.js"></script>
