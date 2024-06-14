@@ -27,11 +27,11 @@
                 <!-- <ul>
                     <li :class="lineTrough(i)"> {{element.cosa}} </li>
                 </ul> -->
-                <span>{{element.fare}}: {{element.cosa}}</span>
+                <span :class="lineTrough(i)">{{element.fare}}: {{element.cosa}}</span>
             </li>
         </ol>
-        <input type="text" name="aggiungicosa" id="" placeholder="Aggiungi cosa fare" v-model="addCosa">
-        <input type="text" name="aggiungifare" id="" placeholder="Aggiungi cose da fare" v-model="addFare">
+        <input type="text" name="cosa" id="" placeholder="Aggiungi cosa" v-model="addFare">
+        <input type="text" name="fare" id="" placeholder="Aggiungi fare" v-model="addCosa">
         <button type="submit" @click="addElement()">Aggiungi</button>
     </div>
 
