@@ -23,16 +23,16 @@
         <h1 class="m-0 text-center"> {{ listMessage }} </h1>
 
         <ol class="m-0">
-            <li v-for="element, i in print" @click="elementDone(i)">
+            <li v-for="element, i in todoList" @click="elementDone(i)">
                 <!-- <ul>
                     <li :class="lineTrough(i)"> {{element.cosa}} </li>
                 </ul> -->
                 <span :class="lineTrough(i)">{{element.fare}}: {{element.cosa}}</span>
             </li>
         </ol>
-        <input type="text" name="cosa" id="" placeholder="Aggiungi cosa" v-model="addFare">
-        <input type="text" name="fare" id="" placeholder="Aggiungi fare" v-model="addCosa">
-        <button type="submit" @click="addElement()">Aggiungi</button>
+        <input type="text" name="cosa" id="" placeholder="Aggiungi cosa min:2car" v-model="addFare">
+        <input type="text" name="fare" id="" placeholder="Aggiungi fare min:2car" v-model="addCosa">
+        <button type="submit" @click="addElement()" v-if="addCosa.length > 2 && addFare.length > 2">Aggiungi</button>
     </div>
 
     <script src="./main.js"></script>
