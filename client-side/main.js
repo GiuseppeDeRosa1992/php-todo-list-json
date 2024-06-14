@@ -32,7 +32,7 @@ createApp({
     mounted() {
         console.log("Funziona tutto");
 
-        axios.get("../server.php").then(result => {
+        axios.get("../list.php").then(result => {
             console.log(result.data)
             this.print = result.data
             console.log(this.print)
